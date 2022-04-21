@@ -14,7 +14,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.AvtobusDeda.text = "soem"
+        binding.AvtobusDeda.setOnClickListener {
+            Toast.makeText(this, "asldjalsjd", Toast.LENGTH_SHORT).show()
+        }
 
     }
 }
