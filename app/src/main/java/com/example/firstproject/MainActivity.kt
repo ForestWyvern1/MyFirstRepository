@@ -1,8 +1,8 @@
 package com.example.firstproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.firstproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.AvtobusDeda.text = "soem"
+        val dataList = listOf(
+            RecyclerData("123", 0),
+            RecyclerData("dasd", 0),
+            RecyclerData("123", 1),
+            RecyclerData("12asda3", 0),
+            RecyclerData("12asd3", 1),
+        )
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = CombineRvAdapter(this, dataList)
 
     }
 }
